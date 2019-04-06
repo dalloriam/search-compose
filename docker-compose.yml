@@ -1,0 +1,25 @@
+version: '2'
+services:
+  index:
+    image: gcr.io/personal-workspace/index:latest
+    ports:
+      - "33100:33100"
+      - "33200:33200"
+    volumes:
+      - /home/index/meta:/data/index_meta
+  nginx:
+    image: nginx:alpine
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /home/index/data/nginx:/etc/nginx/conf.d
+      - /home/index/data/certbot/conf:/etc/letsencrypt
+      - /home/index/data/certbot/www:/var/www/certbot
+  certbot:
+    image: certbot/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    volumes:
+      - /home/index/data/certbot/conf:/etc/letsencrypt
+      - /home/index/data/certbot/www:/var/www/certbot
