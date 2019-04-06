@@ -1,0 +1,53 @@
+{
+    "directory": "/data/index_meta",
+    "sources": [
+      {
+        "id": 1,
+        "expiration_interval_seconds": 604800,
+        "fields": {
+          "body": {
+            "name": "body",
+            "type": "string",
+            "facet": false
+          },
+          "extension": {
+            "name": "extension",
+            "type": "string",
+            "facet": true
+          },
+          "hostname": {
+            "name": "hostname",
+            "type": "string",
+            "facet": true
+          },
+          "path": {
+            "name": "path",
+            "type": "string",
+            "facet": false
+          },
+          "preview": {
+            "name": "preview",
+            "type": "bytes",
+            "facet": false
+          }
+        }
+      }
+    ],
+    "flush_interval_seconds": 30,
+    "gc_interval_seconds": 45,
+    "merge_interval_seconds": 30,
+    "document_loader": {
+      "cache_size": 1024,
+      "worker_count": 5
+    },
+    "layers": {
+      "search_api": {
+        "port": 33100,
+        "use_firebase": false
+      },
+      "index_api": {
+        "port": 33200
+      }
+    }
+  }
+  

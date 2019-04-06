@@ -7,6 +7,7 @@ services:
       - "33200:33200"
     volumes:
       - /home/index/meta:/data/index_meta
+      - ./index/config.json:/bin/config.json
   nginx:
     image: nginx:alpine
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
