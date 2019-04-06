@@ -14,7 +14,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - /home/index/data/nginx:/etc/nginx/conf.d
+      - ./nginx:/etc/nginx/conf.d
       - /home/index/data/certbot/conf:/etc/letsencrypt
       - /home/index/data/certbot/www:/var/www/certbot
   certbot:
