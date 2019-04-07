@@ -1,53 +1,52 @@
 {
-    "directory": "/data/index_meta",
-    "sources": [
-      {
-        "id": 1,
-        "expirationIntervalSeconds": 604800,
-        "fields": {
-          "body": {
-            "name": "body",
-            "type": "string",
-            "facet": false
-          },
-          "extension": {
-            "name": "extension",
-            "type": "string",
-            "facet": true
-          },
-          "hostname": {
-            "name": "hostname",
-            "type": "string",
-            "facet": true
-          },
-          "path": {
-            "name": "path",
-            "type": "string",
-            "facet": false
-          },
-          "preview": {
-            "name": "preview",
-            "type": "bytes",
-            "facet": false
-          }
+  "directory": "/data/index_meta",
+  "sources": [
+    {
+      "id": 1,
+      "expirationIntervalSeconds": 604800,
+      "fields": {
+        "body": {
+          "name": "body",
+          "type": "string",
+          "facet": false
+        },
+        "extension": {
+          "name": "extension",
+          "type": "string",
+          "facet": true
+        },
+        "hostname": {
+          "name": "hostname",
+          "type": "string",
+          "facet": true
+        },
+        "path": {
+          "name": "path",
+          "type": "string",
+          "facet": false
+        },
+        "preview": {
+          "name": "preview",
+          "type": "bytes",
+          "facet": false
         }
       }
-    ],
-    "flushIntervalSeconds": 30,
-    "gcIntervalSeconds": 45,
-    "mergeIntervalSeconds": 30,
-    "documentLoader": {
-      "cacheSize": 1024,
-      "workerCount": 5
+    }
+  ],
+  "flushIntervalSeconds": 30,
+  "gcIntervalSeconds": 45,
+  "mergeIntervalSeconds": 30,
+  "documentLoader": {
+    "cacheSize": 1024,
+    "workerCount": 5
+  },
+  "layers": {
+    "searchApi": {
+      "port": 33100,
+      "authentication": "firebase"
     },
-    "layers": {
-      "searchApi": {
-        "port": 33100,
-        "useFirebase": false
-      },
-      "indexApi": {
-        "port": 33200
-      }
+    "indexApi": {
+      "port": 33200
     }
   }
-  
+}
