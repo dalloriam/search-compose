@@ -7,9 +7,11 @@ services:
       - "33200:33200"
     environment:
       - INDEX_LAYERS_INDEXAPI_SECRET
+      - GOOGLE_APPLICATION_CREDENTIALS=/data/google_creds.json
     volumes:
       - /home/index/meta:/data/index_meta
       - ./index/config.json:/bin/config.json
+      - /home/index/gcloud/creds.json:/data/google_creds.json
   nginx:
     image: nginx:alpine
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
