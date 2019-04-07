@@ -3,7 +3,7 @@
     "sources": [
       {
         "id": 1,
-        "expiration_interval_seconds": 604800,
+        "expirationIntervalSeconds": 604800,
         "fields": {
           "body": {
             "name": "body",
@@ -33,19 +33,19 @@
         }
       }
     ],
-    "flush_interval_seconds": 30,
-    "gc_interval_seconds": 45,
-    "merge_interval_seconds": 30,
-    "document_loader": {
-      "cache_size": 1024,
-      "worker_count": 5
+    "flushIntervalSeconds": 30,
+    "gcIntervalSeconds": 45,
+    "mergeIntervalSeconds": 30,
+    "documentLoader": {
+      "cacheSize": 1024,
+      "workerCount": 5
     },
     "layers": {
-      "search_api": {
+      "searchApi": {
         "port": 33100,
-        "use_firebase": false
+        "useFirebase": false
       },
-      "index_api": {
+      "indexApi": {
         "port": 33200
       }
     }

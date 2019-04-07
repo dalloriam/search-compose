@@ -5,6 +5,8 @@ services:
     ports:
       - "33100:33100"
       - "33200:33200"
+    environment:
+      - INDEX_LAYERS_INDEXAPI_SECRET
     volumes:
       - /home/index/meta:/data/index_meta
       - ./index/config.json:/bin/config.json
