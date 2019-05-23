@@ -1,12 +1,13 @@
 version: '2'
 services:
   index:
-    image: gcr.io/personal-workspace/index:v0.1.6
+    image: gcr.io/personal-workspace/index:v0.2.0
     ports:
       - "33100:33100"
       - "33200:33200"
     environment:
-      - INDEX_LAYERS_INDEXAPI_SECRET
+      - INDEX_LAYERS_INDEXAPI_CONFIGURATION_SECRET
+      - INDEX_LAYERS_ADMINAPI_CONFIGURATION_SECRET
       - GOOGLE_APPLICATION_CREDENTIALS=/data/google_creds.json
     volumes:
       - /home/index/meta:/data/index_meta
