@@ -5,6 +5,7 @@ services:
     ports:
       - "33100:33100"
       - "33200:33200"
+      - "33300:33300"
     environment:
       - INDEX_LAYERS_INDEXAPI_CONFIGURATION_SECRET
       - INDEX_LAYERS_ADMINAPI_CONFIGURATION_SECRET
