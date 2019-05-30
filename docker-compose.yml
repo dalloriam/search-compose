@@ -1,7 +1,7 @@
 version: '2'
 services:
   index:
-    image: gcr.io/personal-workspace/index:v0.2.0
+    image: gcr.io/personal-workspace/index:v0.3.0
     ports:
       - "33100:33100"
       - "33200:33200"
