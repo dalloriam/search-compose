@@ -1,69 +1,68 @@
 {
-    "Layers": {
-      "AdminAPI": {
-        "Type": "AdminAPI",
-        "Configuration": {
-          "Port": 33300
-        }
-      },
-      "IndexAPI": {
-        "Type": "IndexAPI",
-        "Configuration": {
-          "Port": 33200
-        }
-      },
-      "SearchAPI": {
-        "Type": "SearchAPI",
-        "Configuration": {
-          "AuthenticationProvider": "firebase",
-          "Port": 33100
-        }
+  "Layers": {
+    "AdminAPI": {
+      "Type": "AdminAPI",
+      "Configuration": {
+        "Port": 33300
       }
     },
-    "LogFilePath": "index.log",
-    "Index": {
-      "RootDirectory": "/data/index_meta",
-      "TermCacheSize": 2048,
-      "FlushIntervalSeconds": 120,
-      "GCIntervalSeconds": 3600,
-      "SegmentMergeIntervalSeconds": 300,
-      "DocumentLoader": {
-        "DocumentCacheSize": 256,
-        "Concurrency": 5
-      },
-      "Sources": [
-        {
-          "ID": 1,
-          "ExpirationIntervalSeconds": 604800,
-          "Fields": {
-            "body": {
-              "Name": "body",
-              "Type": "string",
-              "Facet": false
-            },
-            "extension": {
-              "Name": "extension",
-              "Type": "string",
-              "Facet": true
-            },
-            "hostname": {
-              "Name": "hostname",
-              "Type": "string",
-              "Facet": true
-            },
-            "path": {
-              "Name": "path",
-              "Type": "string",
-              "Facet": false
-            },
-            "preview": {
-              "Name": "preview",
-              "Type": "bytes",
-              "Facet": false
-            }
+    "IndexAPI": {
+      "Type": "IndexAPI",
+      "Configuration": {
+        "Port": 33200
+      }
+    },
+    "SearchAPI": {
+      "Type": "SearchAPI",
+      "Configuration": {
+        "AuthenticationProvider": "firebase",
+        "Port": 33100
+      }
+    }
+  },
+  "LogFilePath": "index.log",
+  "Index": {
+    "RootDirectory": "/data/index_meta",
+    "TermCacheSize": 2048,
+    "FlushIntervalSeconds": 60,
+    "GCIntervalSeconds": 3600,
+    "SegmentMergeIntervalSeconds": 300,
+    "DocumentLoader": {
+      "DocumentCacheSize": 256,
+      "Concurrency": 5
+    },
+    "Sources": [
+      {
+        "ID": 1,
+        "ExpirationIntervalSeconds": 604800,
+        "Fields": {
+          "body": {
+            "Name": "body",
+            "Type": "string",
+            "Facet": false
+          },
+          "extension": {
+            "Name": "extension",
+            "Type": "string",
+            "Facet": true
+          },
+          "hostname": {
+            "Name": "hostname",
+            "Type": "string",
+            "Facet": true
+          },
+          "path": {
+            "Name": "path",
+            "Type": "string",
+            "Facet": false
+          },
+          "preview": {
+            "Name": "preview",
+            "Type": "bytes",
+            "Facet": false
           }
         }
-      ]
-    }
+      }
+    ]
   }
-  
+}
