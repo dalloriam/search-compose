@@ -21,6 +21,7 @@
     }
   },
   "LogFilePath": "index.log",
+  "MaximumSegmentSizeMb": 2048,
   "Index": {
     "RootDirectory": "/data/index_meta",
     "TermCacheSize": 2048,
