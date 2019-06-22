@@ -31,38 +31,36 @@
       "DocumentCacheSize": 256,
       "Concurrency": 5
     },
-    "Sources": [
-      {
-        "ID": 1,
-        "ExpirationIntervalSeconds": 604800,
-        "Fields": {
-          "body": {
-            "Name": "body",
-            "Type": "string",
-            "Facet": false
-          },
-          "extension": {
-            "Name": "extension",
-            "Type": "string",
-            "Facet": true
-          },
-          "hostname": {
-            "Name": "hostname",
-            "Type": "string",
-            "Facet": true
-          },
-          "path": {
-            "Name": "path",
-            "Type": "string",
-            "Facet": false
-          },
-          "preview": {
-            "Name": "preview",
-            "Type": "bytes",
-            "Facet": false
-          }
+    "ValidateOperationIntegrity": false,
+    "Mapping": {
+      "ExpirationIntervalSeconds": 604800,
+      "Fields": {
+        "body": {
+          "Name": "body",
+          "Type": "string",
+          "Facet": false
+        },
+        "extension": {
+          "Name": "extension",
+          "Type": "string",
+          "Facet": true
+        },
+        "hostname": {
+          "Name": "hostname",
+          "Type": "string",
+          "Facet": true
+        },
+        "path": {
+          "Name": "path",
+          "Type": "string",
+          "Facet": false
+        },
+        "preview": {
+          "Name": "preview",
+          "Type": "bytes",
+          "Facet": false
         }
       }
-    ]
+    }
   }
 }
