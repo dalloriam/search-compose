@@ -40,27 +40,29 @@
         "body": {
           "Name": "body",
           "Type": "string",
-          "Facet": false
+          "IsFacet": false,
+          "IsPreview": true
         },
         "extension": {
           "Name": "extension",
           "Type": "string",
-          "Facet": true
+          "IsFacet": true
         },
         "hostname": {
           "Name": "hostname",
           "Type": "string",
-          "Facet": true
+          "IsFacet": true
         },
         "path": {
           "Name": "path",
           "Type": "string",
-          "Facet": false
+          "IsFacet": false
         },
         "preview": {
           "Name": "preview",
           "Type": "bytes",
-          "Facet": false
+          "IsFacet": false,
+          "IsPreview": true
         }
       }
     }
